@@ -1,0 +1,11 @@
+node_modules/
+
+# JavaScript
+*node_modules*
+
+# Text editors and IDEs
+.vscode
+.vscode/
+
+# macOS system files
+*.DS_Store
