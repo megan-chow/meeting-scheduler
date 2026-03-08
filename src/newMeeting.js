@@ -8,8 +8,6 @@
 //     popup.classList.toggle("show");
 //   }
 
-
-
 //   popupOverlay.addEventListener("click", function (event) {
 //     if (event.target === popupOverlay) {
 //       closePopupFunc();
@@ -24,7 +22,8 @@ const createMeetingButton = document.getElementById("create-meeting-button");
 function togglePopUp() {
   let newMeetingOverlay = document.getElementById("new-meeting-overlay");
   console.log("toggling");
-  newMeetingOverlay.style.display = (newMeetingOverlay.style.display === "flex") ? "none" : "flex";
+  newMeetingOverlay.style.display =
+    newMeetingOverlay.style.display === "flex" ? "none" : "flex";
 }
 
 createMeetingButton.addEventListener("click", togglePopUp);
