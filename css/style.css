@@ -4,3 +4,15 @@ body {
 #new-meeting-container {
   /* display: none; */
 }
+
+#new-meeting-container * {
+  padding: 1%;
+  margin: 1%;
+
+  display: block;
+}
+
+textarea {
+  resize: none;
+  min-width: 10%;
+}
