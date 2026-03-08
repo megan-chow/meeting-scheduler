@@ -24,8 +24,8 @@ async function parseICS(url) {
 
 let calendar;
 
-document.addEventListener('DOMContentLoaded', async function() {
-  const calendarEl = document.getElementById('calendar');
+document.addEventListener("DOMContentLoaded", async function () {
+  const calendarEl = document.getElementById("calendar");
 
   calendar = new Calendar(calendarEl, {
     plugins: [
@@ -52,20 +52,28 @@ document.addEventListener('DOMContentLoaded', async function() {
   calendar.addEventSource({
     id: "cal1",
     events: calendar1Events,
-    color: "#3b82f6",
+    color: "#B9BFFB",
   });
 
   calendar.addEventSource({
     id: "cal2",
     events: calendar2Events,
-    color: "#10b981",
+    color: "#BEFF",
+  });
+
+  calendar.addEventSource({
+    id: "cal3",
+    events: calendar2Events,
+    color: "#FEF196",
   });
 
   // Render after adding events
   calendar.render();
 });
 
-document.getElementById("meeting-submit").addEventListener("click", findAllTimes);
+document
+  .getElementById("meeting-submit")
+  .addEventListener("click", findAllTimes);
 
 function findAllTimes() {
   console.log("finding times");
@@ -77,18 +85,19 @@ function findAllTimes() {
   console.log("start: " + startObject);
   console.log("end: " + endObject);
 
-  let eventsInRange = calendar.getEvents()
-    .filter(ev =>
-      ev.start >= startObject && ev.start < endObject
-    )
-    .map(ev => ({
+  let eventsInRange = calendar
+    .getEvents()
+    .filter((ev) => ev.start >= startObject && ev.start < endObject)
+    .map((ev) => ({
       start: ev.start,
-      end: ev.end || new Date(ev.start.getTime() + 30 * 60 * 1000) // fallback 30min
+      end: ev.end || new Date(ev.start.getTime() + 30 * 60 * 1000), // fallback 30min
     }))
     .sort((a, b) => a.start - b.start);
   console.log(eventsInRange);
   let durationHours = document.getElementById("meeting-duration-hour").value;
-  let durationMinutes = document.getElementById("meeting-duration-minutes").value;
+  let durationMinutes = document.getElementById(
+    "meeting-duration-minutes",
+  ).value;
   durationHours = parseInt(durationHours, 10);
   durationMinutes = parseInt(durationMinutes, 10);
   let duration;
@@ -104,21 +113,18 @@ function findAllTimes() {
     meetingEnd.setMinutes(meetingEnd.getMinutes() + durationMinutes);
     console.log("meetingEnd: " + meetingEnd);
     if (meetingEnd <= eventsInRange[event_i].start) {
-      freeTimes.push(
-        {
-          start: new Date(d), 
-          end: new Date(meetingEnd)
-        }
-      );
+      freeTimes.push({
+        start: new Date(d),
+        end: new Date(meetingEnd),
+      });
       d.setMinutes(d.getMinutes + 15);
-    }
-    else {
+    } else {
       d = eventsInRange[event_i].end;
       event_i++;
     }
   }
   console.log(freeTimes);
-  let timesList = document.getElementById("times-list")
+  let timesList = document.getElementById("times-list");
   for (let i = 0; i < freeTimes.length; i++) {
     let el = document.createElement("div");
     el.className = "available-time-option";
@@ -134,6 +140,5 @@ function findAllTimes() {
     el.appendChild(endTimeSpan);
 
     timesList.appendChild(el);
-    
   }
 }
