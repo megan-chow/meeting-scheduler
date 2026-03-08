@@ -75,8 +75,8 @@ header {
   font-family: "Roboto", sans-serif;
   color: var(--eightOption);
   font-weight: 700;
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 28px;
+  margin-bottom: 2rem;
 }
 
 legend {
@@ -91,6 +91,65 @@ legend {
   font-weight: 400;
   font-style: normal;
 }
+/* Create Meeting Card */
+/* Compact Create Meeting Card */
+#create-meeting {
+  width: 25rem;                   /* smaller width */
+  max-width: 90%;                 /* responsive on small screens */
+  background-color: var(--thirdOption_1);
+  border-radius: 15px;            /* still rounded */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  padding: 1.5rem;                /* less padding for smaller card */
+  margin: 1.5rem auto;            /* center horizontally */
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;                   /* less gap between elements */
+  font-family: "Roboto", sans-serif;
+  font-size: 0.9rem;              /* smaller text to fit better */
+}
+
+/* Inputs and textareas */
+#create-meeting input,
+#create-meeting textarea,
+#create-meeting select {
+  padding: 0.5rem 0.75rem;        /* smaller input padding */
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 0.9rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Labels */
+#create-meeting label {
+  font-weight: bold;
+  color: var(--eightOption);
+  margin-bottom: 0.25rem;
+  font-size: 0.9rem;
+}
+
+/* Button */
+#create-meeting button {
+  background-color: var(--sixOption);
+  color: black;
+  font-weight: bold;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+#create-meeting button:hover {
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+  transform: translateY(-1px);
+}
+
+
+
+#new-meeting-container {
+  /* display: none; */
+}
 
 #new-meeting-container {
   /* display: none; */
@@ -98,7 +157,6 @@ legend {
 
 #new-meeting-overlay {
   width: 30rem;
-  background-color: white;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -112,7 +170,6 @@ legend {
 #new-meeting-overlay * {
   padding: 1%;
   margin: 1%;
-
   display: block;
 }
 
@@ -123,4 +180,14 @@ legend {
 textarea {
   resize: none;
   min-width: 10%;
+}
+
+#meeting-submit {
+  background-color: var(--AOption);  /* button color */
+  color: white;                      /* text color */
+  border: none;
+  border-radius: 8px;                  /* rounded corners */
+  padding: 8px 14px;
+  font-weight: 600;                    /* gives text weight */
+  cursor: pointer;
 }
