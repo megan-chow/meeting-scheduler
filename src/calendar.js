@@ -22,10 +22,12 @@ async function parseICS(url) {
   });
 }
 
-document.addEventListener("DOMContentLoaded", async function () {
-  const calendarEl = document.getElementById("calendar");
+let calendar;
 
-  const calendar = new Calendar(calendarEl, {
+document.addEventListener('DOMContentLoaded', async function() {
+  const calendarEl = document.getElementById('calendar');
+
+  calendar = new Calendar(calendarEl, {
     plugins: [
       googleCalendarPlugin,
       dayGridPlugin,
@@ -62,3 +64,58 @@ document.addEventListener("DOMContentLoaded", async function () {
   // Render after adding events
   calendar.render();
 });
+
+document.getElementById("meeting-submit").addEventListener("click", findAllTimes);
+
+function findAllTimes() {
+  console.log("finding times");
+  let startTime = document.getElementById("meeting-start-date").value;
+  let endTime = document.getElementById("meeting-end-date").value;
+  const startObject = new Date(startTime);
+  const endObject = new Date(endTime);
+
+  console.log("start: " + startObject);
+  console.log("end: " + endObject);
+
+  let eventsInRange = calendar.getEvents()
+    .filter(ev =>
+      ev.start >= startObject && ev.start < endObject
+    )
+    .map(ev => ({
+      start: ev.start,
+      end: ev.end || new Date(ev.start.getTime() + 30 * 60 * 1000) // fallback 30min
+    }))
+    .sort((a, b) => a.start - b.start);
+  console.log(eventsInRange);
+  let durationHours = document.getElementById("meeting-duration-hour").value;
+  let durationMinutes = document.getElementById("meeting-duration-minutes").value;
+  durationHours = parseInt(durationHours, 10);
+  durationMinutes = parseInt(durationMinutes, 10);
+  let duration;
+  let freeTimes = [];
+
+  let event_i = 0;
+  let d = new Date(startObject);
+  console.log(d);
+  while (d < endObject) {
+    console.log("d: " + d);
+    let meetingEnd = new Date(d);
+    meetingEnd.setHours(meetingEnd.getHours() + durationHours);
+    meetingEnd.setMinutes(meetingEnd.getMinutes() + durationMinutes);
+    console.log("meetingEnd: " + meetingEnd);
+    if (meetingEnd <= eventsInRange[event_i].start) {
+      freeTimes.push(
+        {
+          start: new Date(d), 
+          end: new Date(meetingEnd)
+        }
+      );
+      d.setMinutes(d.getMinutes + 15);
+    }
+    else {
+      d = eventsInRange[event_i].end;
+      event_i++;
+    }
+  }
+  console.log(freeTimes);
+}
