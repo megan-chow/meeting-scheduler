@@ -9,58 +9,88 @@
 
   <body>
     <header>Meeting Scheduler</header>
-    <br/>
+    <br />
 
     <div id="calendar"></div>
 
-    <input
-      type="button"
-      value="create new meeting"
-      onclick="newMeetingPopUp()"
-    />
+    <input type="button" value="create new meeting" onclick="openPopUp()" />
 
-    <div id="new-meeting-container">
-      <form id="create-meeting" class="new-meeting" action="">
-        <fieldset>
-          <legend>Create a new meeting</legend>
-
-          <!--Meeting title-->
-          <input id="meeting-title" type="text" placeholder="Title" required />
-
-          <!--Meeting description-->
-          <textarea
-            id="meeting-description"
-            placeholder="Description"
-            maxlength="255"
-          ></textarea>
-
-          <!--Select date and time range-->
-
+    <div id="new-meeting-overlay">
+      <div id="new-meeting-pop-up">
+        <form id="create-meeting" class="new-meeting" action="">
           <fieldset>
-            <legend>Select a date/time range</legend>
-            <input id="meeting-start-date" type="datetime-local" required />
-            <input id="meeting-end-date" type="datetime-local" required />
+            <legend>Create a new meeting</legend>
+
+            <!--Meeting title-->
+            <input
+              id="meeting-title"
+              type="text"
+              placeholder="Title"
+              required
+            />
+
+            <!--Meeting description-->
+            <textarea
+              id="meeting-description"
+              placeholder="Description"
+              maxlength="255"
+            ></textarea>
+
+            <!--Select date and time range-->
+
+            <fieldset>
+              <legend>Select a date/time range</legend>
+              <input id="meeting-start-date" type="datetime-local" required />
+              <input id="meeting-end-date" type="datetime-local" required />
+            </fieldset>
+
+            <!--Set time zone-->
+            <label for="time-zone">Select a time-zone:</label>
+            <select id="meeting-time-zone" name="time-zone">
+              <option>PST</option>
+              <option>MST</option>
+              <option>CST</option>
+              <option>EST</option>
+              <option>AST</option>
+              <option>NST</option>
+            </select>
+
+            <!--Select meeting duration-->
+            <fieldset>
+              <legend>Select the meeting duration</legend>
+              <div id="meeting-duration-container">
+                <label for="meeting-duration-hour">Hours:</label>
+                <input
+                  class="meeting-duration"
+                  id="meeting-duration-hour"
+                  type="number"
+                  value="1"
+                  min="1"
+                  max="5"
+                />
+
+                <label for="meeting-duration-minutes">Minutes</label>
+                <input
+                  id="meeting-duration-minutes"
+                  type="number"
+                  value="0"
+                  min="0"
+                  max="45"
+                  step="15"
+                />
+              </div>
+            </fieldset>
+
+            <input
+              id="meeting-submit"
+              type="submit"
+              value="Create Meeting"
+              step="5"
+            />
           </fieldset>
-
-          <!--Set time zone-->
-          <label for="time-zone">Select a time-zone:</label>
-          <select id="meeting-time-zone" name="time-zone">
-            <option>PST</option>
-            <option>MST</option>
-            <option>CST</option>
-            <option>EST</option>
-            <option>AST</option>
-            <option>NST</option>
-          </select>
-
-          <!--Select meeting duration-->
-          <label for="time-zone">Select the meeting duration:</label>
-          <input id="meeting-duration" type="time" />
-
-          <input id="meeting-submit" type="submit" value="Create Meeting" />
-        </fieldset>
-        <!--Select people:Phase 2-->
-      </form>
+          <!--Select people:Phase 2-->
+        </form>
+      </div>
     </div>
 
     <!--On-click submit button-->
