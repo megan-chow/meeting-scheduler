@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "Caveat";
+  src: url("../fonts/Caveat-VariableFont_wght.ttf") format("truetype");
+  font-weight: 1000;
+  font-size: 20px;
+  font-style: normal;
+}
 /* --------------------------------------------------
 * Theme colours (CSS variables)
 * --------------------------------------------------
@@ -26,17 +33,13 @@
   --btn-border-width: 3px;
   --btn-border-width-hover: 5px;
 }
-
-body {
-  background-color: var(--light-text);
-  font-family: "Playwrite NZ", cursive;
-
-  background-color: var(--light-text);
-  font-family: "PlaywriteNZ", sans-serif;
-}
+body{
 header {
+  /* Now this matches the name defined above */
+  font-family: "Caveat", sans-serif;
   color: var(--thirdOption);
-  font-family: "cavate", sans-serif;
+  font-size: 40pt;
+}
 }
 .shadows-into-light-regular {
   font-family: "Shadows Into Light";
@@ -46,6 +49,7 @@ header {
 
 #new-meeting-container {
   /* display: none; */
+  
 }
 
 #new-meeting-container * {
