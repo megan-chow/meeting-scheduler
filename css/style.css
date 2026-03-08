@@ -54,6 +54,10 @@ body {
   display: block;
 }
 
+#meeting-duration-container * {
+  float: left;
+}
+
 textarea {
   resize: none;
   min-width: 10%;
