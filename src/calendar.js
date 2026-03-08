@@ -1,6 +1,7 @@
 import { Calendar } from '@fullcalendar/core';
 import googleCalendarPlugin from '@fullcalendar/google-calendar';
 import dayGridPlugin from '@fullcalendar/daygrid';
+import timeGridPlugin from '@fullcalendar/timegrid';
 import iCalendarPlugin from '@fullcalendar/icalendar'
 import ICAL from "ical.js";
 
@@ -28,6 +29,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     plugins: [
       googleCalendarPlugin,
       dayGridPlugin,
+      timeGridPlugin,
       iCalendarPlugin
     ],
     initialView: 'dayGridMonth',
