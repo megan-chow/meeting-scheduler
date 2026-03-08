@@ -18,8 +18,15 @@
 // });
 
 const createMeetingButton = document.getElementById("create-meeting-button");
+createMeetingButton.addEventListener("click", togglePopUp);
 
-function togglePopUp() {
+const meetingForm = document.getElementById("create-meeting");
+meetingForm.addEventListener("submit", function (e) {
+  // form should stay open when user clicks submit
+  e.preventDefault();
+});
+
+function togglePopUp(e) {
   let newMeetingOverlay = document.getElementById("new-meeting-overlay");
   console.log("toggling"g);
   newMeetingOverlay.style.display =

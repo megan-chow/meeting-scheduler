@@ -31,6 +31,7 @@
               type="text"
               placeholder="Title"
               required
+              value="Meeting"
             />
 
             <!--Meeting description-->
@@ -44,8 +45,18 @@
 
             <fieldset>
               <legend>Select a date/time range</legend>
-              <input id="meeting-start-date" type="datetime-local" required />
-              <input id="meeting-end-date" type="datetime-local" required />
+              <input
+                id="meeting-start-date"
+                type="datetime-local"
+                required
+                value="2026-03-09T07:00"
+              />
+              <input
+                id="meeting-end-date"
+                type="datetime-local"
+                required
+                value="2026-03-09T18:00"
+              />
             </fieldset>
 
             <!--Set time zone-->
