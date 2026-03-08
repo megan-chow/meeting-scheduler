@@ -1,4 +1,46 @@
+@font-face {
+  font-family: "PlaywriteNZ";
+  src: url("/fonts/PlaywriteNZBasic-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* --------------------------------------------------
+* Theme colours (CSS variables)
+* --------------------------------------------------
+*
+* Store as variables for reuse and maintainability. 
+*/
+:root {
+  /* 60% — background */
+  --light-text: #fafafe;
+
+  /* 30% — primary actions and supporting surfaces) */
+  --primary: #87e6ff;
+  --secondary: #008385;
+  --thirdOption: #b9bffb;
+  --fourOption: #beffe4;
+  --fiveOption: #ffe4e5;
+  --sixOption: #fef196;
+  --sevenOption: #00a9a3;
+  --eightOption: #5569b8;
+  /* 10% — accent for emphasis and interaction */
+  --AOption: #f469c3;
+  --BOption: #fc6945;
+  --COption: #00a9a3;
+
+  /* Button border widths */
+  --btn-border-width: 3px;
+  --btn-border-width-hover: 5px;
+}
 body {
+  background-color: var(--light-text);
+  font-family: "PlaywriteNZ", sans-serif;
+}
+.shadows-into-light-regular {
+  font-family: "Shadows Into Light";
+  font-weight: 400;
+  font-style: normal;
 }
 
 #new-meeting-container {
