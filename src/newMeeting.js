@@ -21,7 +21,7 @@ const createMeetingButton = document.getElementById("create-meeting-button");
 
 function togglePopUp() {
   let newMeetingOverlay = document.getElementById("new-meeting-overlay");
-  console.log("toggling");
+  console.log("toggling"g);
   newMeetingOverlay.style.display =
     newMeetingOverlay.style.display === "flex" ? "none" : "flex";
 }
