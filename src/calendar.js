@@ -22,10 +22,12 @@ async function parseICS(url) {
   });
 }
 
+let calendar;
+
 document.addEventListener('DOMContentLoaded', async function() {
   const calendarEl = document.getElementById('calendar');
 
-  const calendar = new Calendar(calendarEl, {
+  calendar = new Calendar(calendarEl, {
     plugins: [
       googleCalendarPlugin,
       dayGridPlugin,
@@ -62,3 +64,43 @@ document.addEventListener('DOMContentLoaded', async function() {
   // Render after adding events
   calendar.render();
 });
+
+document.getElementById("meeting-submit").addEventListener("click", findAllTimes);
+
+function findAllTimes() {
+  console.log("finding times");
+  let startTime = document.getElementById("meeting-start-date").value;
+  let endTime = document.getElementById("meeting-end-date").value;
+  const startObject = new Date(startTime);
+  const endObject = new Date(endTime);
+
+  console.log("start: " + startObject);
+  console.log("end: " + endObject);
+
+  let eventsInRange = calendar.getEvents()
+    .filter(ev =>
+      ev.start >= startObject && ev.start < endObject
+    )
+    .map(ev => ({
+      start: ev.start,
+      end: ev.end || new Date(ev.start.getTime() + 30 * 60 * 1000) // fallback 30min
+    }))
+    .sort((a, b) => a.start - b.start);
+  console.log(eventsInRange);
+  let duration;
+  let freeTimes = [];
+
+  let event_i = 0;
+  let d = new Date(startObject);
+  while (d < endObject) {
+    if (d + duration <= eventsInRange[event_i].start) {
+      freeTimes.push([d, d + duration]);
+      d = addMinutes(d, 15);
+    }
+    else {
+      d = eventsInRange[event_i].end;
+      event_i++;
+    }
+  }
+  console.log(freeTimes);
+}
