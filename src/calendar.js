@@ -141,6 +141,7 @@ function findAllTimes() {
 
     // You forgot these two lines:
     el.appendChild(startTimeSpan);
+    el.append(" - ");
     el.appendChild(endTimeSpan);
 
     timesList.appendChild(el);
