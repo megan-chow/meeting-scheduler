@@ -166,6 +166,8 @@ legend {
   transform: translateY(-1px);
 }
 
+
+
 #new-meeting-container {
   /* display: none; */
 }
@@ -175,8 +177,8 @@ legend {
 }
 
 #new-meeting-overlay {
-  width: 60rem;
-  height: 30rem;
+  width: 45rem;
+  height: 45rem;
   background-color: white;
   position: fixed;
   top: 50%;
@@ -187,14 +189,20 @@ legend {
   align-items: center;
 }
 
+#new-meeting-pop-up {
+  height: 90%;
+}
+
 #available-times-popup {
-  height: 100%;
-  background-color: #5c003c;
+  height: 90%;
+}
+
+#create-meeting {
+  height: 90%;
 }
 
 #available-times-form {
-  height: 100%;
-  background-color: #f469c3;
+  height: 90%;
 }
 
 #new-meeting-overlay * {
@@ -202,8 +210,8 @@ legend {
   margin: 1%;
 }
 
-#meeting-duration-container * {
-  float: left;
+#meeting-duration-container {
+  display: flex;
 }
 
 textarea {

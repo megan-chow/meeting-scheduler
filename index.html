@@ -62,8 +62,9 @@
             <!--Select meeting duration-->
             <fieldset>
               <legend>Select the meeting duration</legend>
+              <h3>Time</h3>
               <div id="meeting-duration-container">
-                <label for="meeting-duration-hour">Hours:</label>
+                <!-- <label for="meeting-duration-hour">Hours:</label> -->
                 <input
                   class="meeting-duration"
                   id="meeting-duration-hour"
@@ -73,7 +74,9 @@
                   max="5"
                 />
 
-                <label for="meeting-duration-minutes">Minutes</label>
+                <h3>:</h3>
+
+                <!-- <label for="meeting-duration-minutes">Minutes</label> -->
                 <input
                   id="meeting-duration-minutes"
                   type="number"
@@ -85,11 +88,7 @@
               </div>
             </fieldset>
 
-            <input
-              id="meeting-submit"
-              type="submit"
-              value="Create Meeting"
-            />
+            <input id="meeting-submit" type="submit" value="Create Meeting" />
           </fieldset>
           <!--Select people:Phase 2-->
         </form>
@@ -98,12 +97,11 @@
         <form id="available-times-form">
           <fieldset>
             <legend>Available Times</legend>
-            <input type="text" />
             <div id="times-list">
-              <div class="available-time-option">
+              <!-- <div class="available-time-option">
                 <span class="start-time">9:00am</span> -
                 <span class="end-time">10:00am</span>
-              </div>
+              </div> -->
             </div>
           </fieldset>
         </form>
