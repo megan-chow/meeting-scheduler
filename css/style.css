@@ -12,6 +12,7 @@
   --primary: #87e6ff;
   --secondary: #008385;
   --thirdOption: #b9bffb;
+  --thirdOption_1: #c9cdfa;
   --fourOption: #beffe4;
   --fiveOption: #ffe4e5;
   --sixOption: #fef196;
@@ -35,17 +36,19 @@ body {
   font-family: "PlaywriteNZ", sans-serif;
 }
 header {
+  /* Now this matches the name defined above */
+  font-family: "Caveat", sans-serif;
   color: var(--thirdOption);
   font-family: "cavate", sans-serif;
 }
 .shadows-into-light-regular {
-  font-family: "Shadows Into Light";
+  font-family: "Caveat";
   font-weight: 400;
   font-style: normal;
 }
 
-#new-meeting-overlay {
-  display: none;
+#new-meeting-container {
+  /* display: none; */
 }
 
 #new-meeting-overlay * {
