@@ -113,25 +113,25 @@ legend {
 /* Create Meeting Card */
 /* Compact Create Meeting Card */
 #create-meeting {
-  width: 25rem;                   /* smaller width */
-  max-width: 90%;                 /* responsive on small screens */
+  width: 25rem; /* smaller width */
+  max-width: 90%; /* responsive on small screens */
   background-color: var(--thirdOption_1);
-  border-radius: 15px;            /* still rounded */
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  padding: 1.5rem;                /* less padding for smaller card */
-  margin: 1.5rem auto;            /* center horizontally */
+  border-radius: 15px; /* still rounded */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  padding: 1.5rem; /* less padding for smaller card */
+  margin: 1.5rem auto; /* center horizontally */
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;                   /* less gap between elements */
+  gap: 0.75rem; /* less gap between elements */
   font-family: "Roboto", sans-serif;
-  font-size: 0.9rem;              /* smaller text to fit better */
+  font-size: 0.9rem; /* smaller text to fit better */
 }
 
 /* Inputs and textareas */
 #create-meeting input,
 #create-meeting textarea,
 #create-meeting select {
-  padding: 0.5rem 0.75rem;        /* smaller input padding */
+  padding: 0.5rem 0.75rem; /* smaller input padding */
   border-radius: 8px;
   border: 1px solid #ccc;
   font-size: 0.9rem;
@@ -160,14 +160,8 @@ legend {
 }
 
 #create-meeting button:hover {
-  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
   transform: translateY(-1px);
-}
-
-
-
-#new-meeting-container {
-  /* display: none; */
 }
 
 #new-meeting-container {
@@ -176,7 +170,7 @@ legend {
 
 #new-meeting-overlay {
   width: 45rem;
-  height: 30rem;
+  height: 45rem;
   background-color: white;
   position: fixed;
   top: 50%;
@@ -208,8 +202,8 @@ legend {
   margin: 1%;
 }
 
-#meeting-duration-container * {
-  float: left;
+#meeting-duration-container {
+  display: flex;
 }
 
 textarea {
@@ -218,11 +212,11 @@ textarea {
 }
 
 #meeting-submit {
-  background-color: var(--AOption);  /* button color */
-  color: white;                      /* text color */
+  background-color: var(--AOption); /* button color */
+  color: white; /* text color */
   border: none;
-  border-radius: 8px;                  /* rounded corners */
+  border-radius: 8px; /* rounded corners */
   padding: 8px 14px;
-  font-weight: 600;                    /* gives text weight */
+  font-weight: 600; /* gives text weight */
   cursor: pointer;
 }
