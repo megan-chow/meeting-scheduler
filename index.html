@@ -12,34 +12,53 @@
     <br/>
 
     <div id="calendar"></div>
+
+    <input
+      type="button"
+      value="create new meeting"
+      onclick="newMeetingPopUp()"
+    />
+
     <div id="new-meeting-container">
       <form id="create-meeting" class="new-meeting" action="">
-        <!--Meeting name-->
-        <input type="text" placeholder="Title" required />
+        <fieldset>
+          <legend>Create a new meeting</legend>
 
-        <!--Meeting description-->
-        <textarea placeholder="Description" maxlength="255"></textarea>
+          <!--Meeting title-->
+          <input id="meeting-title" type="text" placeholder="Title" required />
 
-        <!--Select date and time range-->
-        <input type="date" required />
-        <input type="time" required />
+          <!--Meeting description-->
+          <textarea
+            id="meeting-description"
+            placeholder="Description"
+            maxlength="255"
+          ></textarea>
 
-        <!--Set time zone-->
-        <label for="time-zone">Select a time-zone:</label>
-        <select name="time-zone">
-          <option>PST</option>
-          <option>MST</option>
-          <option>CST</opgittion>
-          <option>EST</option>
-          <option>AST</option>
-          <option>NST</option>
-        </select>
+          <!--Select date and time range-->
 
-        <!--Select meeting duration-->
-        <input type="time" />
+          <fieldset>
+            <legend>Select a date/time range</legend>
+            <input id="meeting-start-date" type="datetime-local" required />
+            <input id="meeting-end-date" type="datetime-local" required />
+          </fieldset>
 
-        <input type="submit" value="Create Meeting" />
+          <!--Set time zone-->
+          <label for="time-zone">Select a time-zone:</label>
+          <select id="meeting-time-zone" name="time-zone">
+            <option>PST</option>
+            <option>MST</option>
+            <option>CST</option>
+            <option>EST</option>
+            <option>AST</option>
+            <option>NST</option>
+          </select>
 
+          <!--Select meeting duration-->
+          <label for="time-zone">Select the meeting duration:</label>
+          <input id="meeting-duration" type="time" />
+
+          <input id="meeting-submit" type="submit" value="Create Meeting" />
+        </fieldset>
         <!--Select people:Phase 2-->
       </form>
     </div>
@@ -55,6 +74,7 @@
       <!--Add new event to schedule-->
     </div>
 
+    <script type="module" src="/src/newMeeting.js"></script>
     <script type="module" src="/src/calendar.js"></script>
   </body>
 </html>
