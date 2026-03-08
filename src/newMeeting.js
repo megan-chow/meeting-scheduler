@@ -16,5 +16,13 @@ document.addEventListener("DOMContentLoaded", function () {
     newMeetingOverlay.style.display = "none";
   }
 
+  closePopup.addEventListener("click", closePopupFunc);
+
+  popupOverlay.addEventListener("click", function (event) {
+    if (event.target === popupOverlay) {
+      closePopupFunc();
+    }
+  });
+
   openPopup();
 });
