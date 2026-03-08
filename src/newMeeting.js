@@ -8,8 +8,6 @@
 //     popup.classList.toggle("show");
 //   }
 
-
-
 //   popupOverlay.addEventListener("click", function (event) {
 //     if (event.target === popupOverlay) {
 //       closePopupFunc();
@@ -20,11 +18,17 @@
 // });
 
 const createMeetingButton = document.getElementById("create-meeting-button");
+createMeetingButton.addEventListener("click", togglePopUp);
 
-function togglePopUp() {
+const meetingForm = document.getElementById("create-meeting");
+meetingForm.addEventListener("submit", function (e) {
+  // form should stay open when user clicks submit
+  e.preventDefault();
+});
+
+function togglePopUp(e) {
   let newMeetingOverlay = document.getElementById("new-meeting-overlay");
   console.log("toggling");
-  newMeetingOverlay.style.display = (newMeetingOverlay.style.display === "flex") ? "none" : "flex";
+  newMeetingOverlay.style.display =
+    newMeetingOverlay.style.display === "flex" ? "none" : "flex";
 }
-
-createMeetingButton.addEventListener("click", togglePopUp);

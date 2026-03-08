@@ -74,6 +74,10 @@ document.addEventListener("DOMContentLoaded", async function () {
 document
   .getElementById("meeting-submit")
   .addEventListener("click", findAllTimes);
+// function findAllTimes() {
+//   console.log("Finding times");
+//   alert("here");
+// }
 
 function findAllTimes() {
   console.log("finding times");
