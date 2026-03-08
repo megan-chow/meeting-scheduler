@@ -33,9 +33,14 @@
   --btn-border-width: 3px;
   --btn-border-width-hover: 5px;
 }
+
 body {
   background-color: var(--light-text);
   font-family: "PlaywriteNZ", sans-serif;
+}
+header {
+  color: var(--thirdOption);
+  font-family: "cavate", sans-serif;
 }
 .shadows-into-light-regular {
   font-family: "Shadows Into Light";
