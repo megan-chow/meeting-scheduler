@@ -11,21 +11,32 @@
     <header>Meeting Scheduler</header>
 
     <div id="calendar"></div>
+
+    <input
+      type="button"
+      value="create new meeting"
+      onclick="newMeetingPopUp()"
+    />
+
     <div id="new-meeting-container">
       <form id="create-meeting" class="new-meeting" action="">
-        <!--Meeting name-->
-        <input type="text" placeholder="Title" required />
+        <!--Meeting title-->
+        <input id="meeting-title" type="text" placeholder="Title" required />
 
         <!--Meeting description-->
-        <textarea placeholder="Description" maxlength="255"></textarea>
+        <textarea
+          id="meeting-description"
+          placeholder="Description"
+          maxlength="255"
+        ></textarea>
 
         <!--Select date and time range-->
-        <input type="date" required />
-        <input type="time" required />
+        <input id="meeting-date" type="date" required />
+        <input id="meeting-time" type="time" required />
 
         <!--Set time zone-->
         <label for="time-zone">Select a time-zone:</label>
-        <select name="time-zone">
+        <select id="meeting-time-zone" name="time-zone">
           <option>PST</option>
           <option>MST</option>
           <option>CST</option>
@@ -35,9 +46,9 @@
         </select>
 
         <!--Select meeting duration-->
-        <input type="time" />
+        <input id="meeting-duration" type="time" />
 
-        <input type="submit" value="Create Meeting" />
+        <input id="meeting-submit" type="submit" value="Create Meeting" />
 
         <!--Select people:Phase 2-->
       </form>
@@ -54,6 +65,7 @@
       <!--Add new event to schedule-->
     </div>
 
+    <script type="module" src="/src/newMeeting.js"></script>
     <script type="module" src="/src/calendar.js"></script>
   </body>
 </html>
