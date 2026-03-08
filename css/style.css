@@ -42,3 +42,19 @@ body {
   font-weight: 400;
   font-style: normal;
 }
+
+#new-meeting-container {
+  /* display: none; */
+}
+
+#new-meeting-container * {
+  padding: 1%;
+  margin: 1%;
+
+  display: block;
+}
+
+textarea {
+  resize: none;
+  min-width: 10%;
+}
