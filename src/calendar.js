@@ -87,15 +87,30 @@ function findAllTimes() {
     }))
     .sort((a, b) => a.start - b.start);
   console.log(eventsInRange);
+  let durationHours = document.getElementById("meeting-duration-hour").value;
+  let durationMinutes = document.getElementById("meeting-duration-minutes").value;
+  durationHours = parseInt(durationHours, 10);
+  durationMinutes = parseInt(durationMinutes, 10);
   let duration;
   let freeTimes = [];
 
   let event_i = 0;
   let d = new Date(startObject);
+  console.log(d);
   while (d < endObject) {
-    if (d + duration <= eventsInRange[event_i].start) {
-      freeTimes.push([d, d + duration]);
-      d = addMinutes(d, 15);
+    console.log("d: " + d);
+    let meetingEnd = new Date(d);
+    meetingEnd.setHours(meetingEnd.getHours() + durationHours);
+    meetingEnd.setMinutes(meetingEnd.getMinutes() + durationMinutes);
+    console.log("meetingEnd: " + meetingEnd);
+    if (meetingEnd <= eventsInRange[event_i].start) {
+      freeTimes.push(
+        {
+          start: new Date(d), 
+          end: new Date(meetingEnd)
+        }
+      );
+      d.setMinutes(d.getMinutes + 15);
     }
     else {
       d = eventsInRange[event_i].end;
