@@ -1,0 +1,7 @@
+* {
+  background-color: aqua;
+}
+
+#new-meeting-container {
+  display: block;
+}
