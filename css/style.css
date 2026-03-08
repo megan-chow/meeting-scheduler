@@ -105,7 +105,6 @@ legend {
   transform: translate(-50%, -50%);  /* perfect centering */
   z-index: 1;
   
-  display: flex;
   justify-content: center;
   align-items: center;
 }
