@@ -13,9 +13,13 @@
 
     <div id="calendar"></div>
 
-    <input id="create-meeting-button" type="button" value="create new meeting" />
+    <input
+      id="create-meeting-button"
+      type="button"
+      value="create new meeting"
+    />
 
-    <div id="new-meeting-overlay" style="display: none;">
+    <div id="new-meeting-overlay" style="display: none">
       <div id="new-meeting-pop-up">
         <form id="create-meeting" class="new-meeting" action="">
           <fieldset>
@@ -85,10 +89,23 @@
               id="meeting-submit"
               type="submit"
               value="Create Meeting"
-              step="5"
             />
           </fieldset>
           <!--Select people:Phase 2-->
+        </form>
+      </div>
+      <div id="available-times-popup">
+        <form id="available-times-form">
+          <fieldset>
+            <legend>Available Times</legend>
+            <input type="text" />
+            <div id="times-list">
+              <div class="available-time-option">
+                <span class="start-time">9:00am</span> -
+                <span class="end-time">10:00am</span>
+              </div>
+            </div>
+          </fieldset>
         </form>
       </div>
     </div>

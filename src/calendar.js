@@ -124,4 +124,21 @@ function findAllTimes() {
     }
   }
   console.log(freeTimes);
+  let timesList = document.getElementById("times-list");
+  for (let i = 0; i < freeTimes.length; i++) {
+    let el = document.createElement("div");
+    el.className = "available-time-option";
+
+    let startTimeSpan = document.createElement("span");
+    startTimeSpan.innerHTML = freeTimes[i].start;
+
+    let endTimeSpan = document.createElement("span");
+    endTimeSpan.innerHTML = freeTimes[i].end;
+
+    // You forgot these two lines:
+    el.appendChild(startTimeSpan);
+    el.appendChild(endTimeSpan);
+
+    timesList.appendChild(el);
+  }
 }
