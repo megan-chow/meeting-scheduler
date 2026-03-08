@@ -10,13 +10,36 @@
   <body>
     <header>Meeting Scheduler</header>
 
+    <div id="calendar"></div>
     <div id="new-meeting-container">
-      <form id="create-meeting" class="new-meeting">
+      <form id="create-meeting" class="new-meeting" action="">
         <!--Meeting name-->
         <input type="text" placeholder="Title" required />
-        <!--Select people-->
+
+        <!--Meeting description-->
+        <textarea placeholder="Description" maxlength="255"></textarea>
+
         <!--Select date and time range-->
+        <input type="date" required />
+        <input type="time" required />
+
+        <!--Set time zone-->
+        <label for="time-zone">Select a time-zone:</label>
+        <select name="time-zone">
+          <option>PST</option>
+          <option>MST</option>
+          <option>CST</option>
+          <option>EST</option>
+          <option>AST</option>
+          <option>NST</option>
+        </select>
+
         <!--Select meeting duration-->
+        <input type="time" />
+
+        <input type="submit" />
+
+        <!--Select people:Phase 2-->
       </form>
     </div>
 
@@ -31,7 +54,6 @@
       <!--Add new event to schedule-->
     </div>
 
-    <div id="calendar"></div>
     <script type="module" src="/src/calendar.js"></script>
   </body>
 </html>
