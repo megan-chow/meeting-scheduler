@@ -86,15 +86,19 @@ header {
   font-style: normal;
 }
 
-#new-meeting-container {
-  /* display: none; */
+#new-meeting-overlay {
+  display: none;
 }
 
-#new-meeting-container * {
+#new-meeting-overlay * {
   padding: 1%;
   margin: 1%;
 
   display: block;
+}
+
+#meeting-duration-container * {
+  float: left;
 }
 
 textarea {
