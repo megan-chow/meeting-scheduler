@@ -1,8 +1,0 @@
-* {
-  background-color: var(--light-text);
-}
-
-#new-meeting-container {
-  display: block;
-  background-color: var(--fiveOption);
-}
