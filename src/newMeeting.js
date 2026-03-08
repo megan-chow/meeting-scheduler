@@ -1,28 +1,30 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const newMeetingOverlay = getElementById("new-meeting-overlay");
-  const newMeetingPopup = getElementById("new-meeting-pop-up");
-  const closeMeetingPopup = document.getElementById("close-button");
+// document.addEventListener("DOMContentLoaded", function () {
+//   const newMeetingOverlay = document.getElementById("new-meeting-overlay");
+//   const newMeetingPopup = document.getElementById("new-meeting-pop-up");
+//   const closeMeetingPopup = document.getElementById("close-button");
 
-  function newMeetingPopUp() {
-    let popup = document.getElementById("new-meeting-container");
-    popup.classList.toggle("show");
-  }
+//   function newMeetingPopUp() {
+//     let popup = document.getElementById("new-meeting-container");
+//     popup.classList.toggle("show");
+//   }
 
-  function openPopUp() {
-    newMeetingOverlay.style.display = "block";
-  }
 
-  function closePopUp() {
-    newMeetingOverlay.style.display = "none";
-  }
 
-  closePopup.addEventListener("click", closePopupFunc);
+//   popupOverlay.addEventListener("click", function (event) {
+//     if (event.target === popupOverlay) {
+//       closePopupFunc();
+//     }
+//   });
 
-  popupOverlay.addEventListener("click", function (event) {
-    if (event.target === popupOverlay) {
-      closePopupFunc();
-    }
-  });
+//   togglePopUp();
+// });
 
-  openPopup();
-});
+const createMeetingButton = document.getElementById("create-meeting-button");
+
+function togglePopUp() {
+  let newMeetingOverlay = document.getElementById("new-meeting-overlay");
+  console.log("toggling");
+  newMeetingOverlay.style.display = (newMeetingOverlay.style.display === "block") ? "none" : "block";
+}
+
+createMeetingButton.addEventListener("click", togglePopUp);

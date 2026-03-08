@@ -32,6 +32,38 @@
   /* Button border widths */
   --btn-border-width: 3px;
   --btn-border-width-hover: 5px;
+
+  .fc .fc-header-toolbar {
+    background: var(--primary);
+    padding: 16px;
+    border-radius: 18px;
+  }
+
+  .fc .fc-day-today {
+    background-color: var(--thirdOption_1) !important; /* 你想要的颜色 */
+  }
+  .fc .fc-button {
+    background-color: var(--AOption) !important;
+    border: none !important;
+    color: #ffffff !important;
+    border-radius: 10px !important;
+    padding: 10px 16px !important;
+  }
+
+  .fc .fc-button:hover {
+    background-color: #2563eb !important;
+  }
+
+  .fc .fc-button-primary:not(:disabled).fc-button-active {
+    background-color: var(--fiveOption) !important;
+    color: #3d3d3d !important;
+  }
+
+  .fc .fc-toolbar-title {
+    color: #667cb9;
+    font-size: 40px;
+    font-weight: 700;
+  }
 }
 
 body {
