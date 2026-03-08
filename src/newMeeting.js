@@ -28,7 +28,7 @@ meetingForm.addEventListener("submit", function (e) {
 
 function togglePopUp(e) {
   let newMeetingOverlay = document.getElementById("new-meeting-overlay");
-  console.log("toggling"g);
+  console.log("toggling");
   newMeetingOverlay.style.display =
     newMeetingOverlay.style.display === "flex" ? "none" : "flex";
 }
