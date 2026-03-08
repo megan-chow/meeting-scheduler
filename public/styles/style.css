@@ -1,8 +1,36 @@
+/* --------------------------------------------------
+* Theme colours (CSS variables)
+* --------------------------------------------------
+*
+* Store as variables for reuse and maintainability. 
+*/
+:root {
+  /* 60% — background */
+  --light-text: #e3e6ff;
+
+  /* 30% — primary actions and supporting surfaces) */
+  --primary: #87e6ff;
+  --secondary: #008385;
+  --thirdOption: #b9bffb;
+  --fourOption: #beffe4;
+  --fiveOption: #ffe4e5;
+  --sixOption: #fef196;
+  --sevenOption: #00a9a3;
+  --eightOption: #5569b8;
+  /* 10% — accent for emphasis and interaction */
+  --AOption: #f469c3;
+  --BOption: #fc6945;
+  --COption: #00a9a3;
+
+  /* Button border widths */
+  --btn-border-width: 3px;
+  --btn-border-width-hover: 5px;
+}
 * {
-  background-color: aqua;
+  background-color: var(--light-text);
 }
 
 #new-meeting-container {
   display: block;
-  background-color: aqua;
+  background-color: var(--fiveOption);
 }
